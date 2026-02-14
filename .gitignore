@@ -5,6 +5,5 @@ __pycache__/
 *.pyd
 *.dll
 *.so
-*.pth
 .env
 uploads/
