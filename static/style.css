@@ -1,0 +1,146 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+.modes button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #e9ecef;
+    color: #333;
+    transition: background-color 0.2s;
+}
+
+.modes button:hover, .modes button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.section {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#file-input {
+    margin-bottom: 15px;
+}
+
+#upload-form button, #capture-button {
+    padding: 10px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+#upload-form button:hover, #capture-button:hover {
+    background-color: #218838;
+}
+
+.webcam-container {
+    margin: 15px 0;
+    position: relative;
+    width: 100%;
+    max-width: 480px; /* Standard webcam resolution */
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #ccc;
+}
+
+#webcam-video {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1); /* Mirror the video */
+}
+
+.result-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    text-align: left;
+}
+
+.result-box h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.result-fake {
+    color: white;
+    background-color: #dc3545; /* Red */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.result-real {
+    color: white;
+    background-color: #28a745; /* Green */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.result-noface {
+    color: #856404;
+    background-color: #fff3cd; /* Yellow/Orange */
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #007bff;
+    animation: spin 1s ease infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 15px;
+    font-weight: bold;
+}

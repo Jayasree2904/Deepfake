@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Xception-LSTM Deepfake Detector</h1>
+        
+        <div class="modes">
+            <button id="show-upload">File Upload</button>
+            <button id="show-webcam">Live Webcam</button>
+        </div>
+
+        <div id="upload-section" class="section active">
+            <h2>Upload Image or Video</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" name="file" id="file-input" accept="image/*,video/*" required>
+                <button type="submit">Predict from File</button>
+            </form>
+        </div>
+
+        <div id="webcam-section" class="section hidden">
+            <h2>Capture Face from Webcam</h2>
+            <div class="webcam-container">
+                <video id="webcam-video" autoplay playsinline></video>
+                <canvas id="webcam-canvas" style="display:none;"></canvas>
+            </div>
+            <button id="capture-button">Capture & Predict</button>
+        </div>
+
+        <div id="result-box" class="result-box hidden">
+            <h3>Prediction Result:</h3>
+            <p id="result-label">Processing...</p>
+            <p id="result-conf"></p>
+        </div>
+
+        <div id="loading-spinner" class="spinner hidden"></div>
+        <div id="error-message" class="error hidden"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
